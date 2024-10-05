@@ -49,6 +49,8 @@ public class Mecanum2025 extends BaseMecanumDrive {
         m_perpendicular = m_backLeft.encoder.setDistancePerPulse(cm_per_tick);
         m_perpendicular.setDirection(MotorEx.Direction.REVERSE);
 
+        m_frontLeft.setInverted(true);
+        m_backLeft.setInverted(true);
 
         m_odometry = new HolonomicOdometry(
                 m_left::getDistance,        // calls functions to get distance
